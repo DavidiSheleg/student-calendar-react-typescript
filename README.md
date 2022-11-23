@@ -1,6 +1,6 @@
 # student-calendar-react-typescript
 
-![Alt Text](https://giphy.com/gifs/O8W2eeDiEQJ549MBBh)
+![App GIF]([https://giphy.com/gifs/O8W2eeDiEQJ549MBBh](https://media.giphy.com/media/O8W2eeDiEQJ549MBBh/giphy.gif)
 
 # Getting Started with Create React App
 
