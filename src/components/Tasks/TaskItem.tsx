@@ -7,9 +7,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 type TaskItemProps = {
     task: TaskType,
-    deleteTaskById: any,
-    openUpdateDialog: any,
-    handleCheckboxClick: any
+    deleteTaskById?: any,
+    openUpdateDialog?: any,
+    handleCheckboxClick?: any
 }
 const TaskItem: FunctionComponent<TaskItemProps> = ({ task, deleteTaskById, openUpdateDialog, handleCheckboxClick }) => {
     const { id, task_name, date, done } = task;
@@ -31,17 +31,17 @@ const TaskItem: FunctionComponent<TaskItemProps> = ({ task, deleteTaskById, open
     return (
         <Grid container className={cx(classes.root)} sx={{ borderLeftColor: done === 1 ? 'green' : 'red'}}>
             <Grid item xs={2}>
-                <Checkbox checked={Boolean(done)}  color={'success'} onChange={(event) => handleCheckboxClick(task, event.target.checked)}/>
+                <Checkbox checked={Boolean(done)} aria-label="checkbox" color={'success'} onChange={(event) => handleCheckboxClick(task, event.target.checked)}/>
             </Grid>
             <Grid item xs={7}>
                 <Typography variant="body1">{task_name}</Typography>
                 <Typography variant="body2" color={'grey'}>{date?.toString()}</Typography>
             </Grid>
             <Grid item xs={3}>
-                <IconButton aria-label="delete" onClick={() => openUpdateDialog(task)}>
+                <IconButton aria-label="update" onClick={() => openUpdateDialog(task)}>
                     <ModeIcon />
                 </IconButton>
-                <IconButton onClick={() => deleteTaskById(id)}>
+                <IconButton aria-label="delete" onClick={() => deleteTaskById(id)}>
                     <DeleteIcon />
                 </IconButton>
             </Grid>
